@@ -31,44 +31,82 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStock));
             this.tblMain = new System.Windows.Forms.TableLayoutPanel();
             this.cboProducto = new System.Windows.Forms.ComboBox();
+            this.dgvStock = new System.Windows.Forms.DataGridView();
             this.tblMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             this.SuspendLayout();
             // 
             // tblMain
             // 
+            this.tblMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tblMain.AutoSize = true;
+            this.tblMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tblMain.BackColor = System.Drawing.Color.Azure;
             this.tblMain.BackgroundImage = global::ArtsentApp.Properties.Resources.NativaDesc;
+            this.tblMain.CausesValidation = false;
             this.tblMain.ColumnCount = 1;
             this.tblMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblMain.Controls.Add(this.cboProducto, 0, 0);
-            this.tblMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblMain.Location = new System.Drawing.Point(0, 0);
+            this.tblMain.Controls.Add(this.dgvStock, 0, 1);
+            this.tblMain.Location = new System.Drawing.Point(4, 3);
             this.tblMain.Name = "tblMain";
             this.tblMain.RowCount = 2;
-            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.33334F));
-            this.tblMain.Size = new System.Drawing.Size(988, 599);
+            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.84874F));
+            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.15126F));
+            this.tblMain.Size = new System.Drawing.Size(979, 593);
             this.tblMain.TabIndex = 0;
+            this.tblMain.Tag = "Elija producto";
             // 
             // cboProducto
             // 
-            this.cboProducto.FormattingEnabled = true;
-            this.cboProducto.Location = new System.Drawing.Point(3, 3);
+            this.cboProducto.AllowDrop = true;
+            this.cboProducto.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cboProducto.BackColor = System.Drawing.Color.Silver;
+            this.cboProducto.DropDownHeight = 15;
+            this.cboProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProducto.DropDownWidth = 100;
+            this.cboProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboProducto.IntegralHeight = false;
+            this.cboProducto.Location = new System.Drawing.Point(189, 88);
             this.cboProducto.Name = "cboProducto";
-            this.cboProducto.Size = new System.Drawing.Size(121, 28);
+            this.cboProducto.Size = new System.Drawing.Size(600, 38);
             this.cboProducto.TabIndex = 0;
+            this.cboProducto.SelectedIndexChanged += new System.EventHandler(this.cboProducto_SelectedIndexChanged);
+            // 
+            // dgvStock
+            // 
+            this.dgvStock.AllowUserToOrderColumns = true;
+            this.dgvStock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvStock.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dgvStock.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvStock.CausesValidation = false;
+            this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStock.Location = new System.Drawing.Point(3, 132);
+            this.dgvStock.Name = "dgvStock";
+            this.dgvStock.RowHeadersWidth = 62;
+            this.dgvStock.RowTemplate.Height = 28;
+            this.dgvStock.Size = new System.Drawing.Size(973, 458);
+            this.dgvStock.TabIndex = 1;
             // 
             // frmStock
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.AutoSize = true;
+            this.AllowDrop = true;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.CadetBlue;
+            this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(988, 599);
             this.Controls.Add(this.tblMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmStock";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Stock Consolidado";
             this.tblMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -78,6 +116,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tblMain;
         private System.Windows.Forms.ComboBox cboProducto;
+        private System.Windows.Forms.DataGridView dgvStock;
     }
 }
 

@@ -15,9 +15,11 @@ namespace ArtsentApp
         public frmStock()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
+            dgvStock.VirtualMode = true;
         }
 
-        private void lblProducto_Click(object sender, EventArgs e)
+        private void cboProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
