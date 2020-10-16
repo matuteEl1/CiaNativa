@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Custom Controls\RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\NativaDesc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refrezcar1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

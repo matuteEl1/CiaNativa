@@ -32,6 +32,7 @@
             this.tblMain = new System.Windows.Forms.TableLayoutPanel();
             this.cboProducto = new System.Windows.Forms.ComboBox();
             this.dgvStock = new System.Windows.Forms.DataGridView();
+            this.btnRefresh = new ArtsentApp.Custom_Controls.RoundButton();
             this.tblMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             this.SuspendLayout();
@@ -48,14 +49,16 @@
             this.tblMain.CausesValidation = false;
             this.tblMain.ColumnCount = 1;
             this.tblMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblMain.Controls.Add(this.cboProducto, 0, 0);
-            this.tblMain.Controls.Add(this.dgvStock, 0, 1);
+            this.tblMain.Controls.Add(this.cboProducto, 0, 1);
+            this.tblMain.Controls.Add(this.dgvStock, 0, 2);
+            this.tblMain.Controls.Add(this.btnRefresh, 0, 0);
             this.tblMain.Location = new System.Drawing.Point(4, 3);
             this.tblMain.Name = "tblMain";
-            this.tblMain.RowCount = 2;
-            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.84874F));
-            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.15126F));
-            this.tblMain.Size = new System.Drawing.Size(979, 593);
+            this.tblMain.RowCount = 3;
+            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.58108F));
+            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.783784F));
+            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.46622F));
+            this.tblMain.Size = new System.Drawing.Size(979, 591);
             this.tblMain.TabIndex = 0;
             this.tblMain.Tag = "Elija producto";
             // 
@@ -69,7 +72,7 @@
             this.cboProducto.DropDownWidth = 100;
             this.cboProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboProducto.IntegralHeight = false;
-            this.cboProducto.Location = new System.Drawing.Point(189, 88);
+            this.cboProducto.Location = new System.Drawing.Point(189, 119);
             this.cboProducto.Name = "cboProducto";
             this.cboProducto.Size = new System.Drawing.Size(600, 38);
             this.cboProducto.TabIndex = 0;
@@ -85,12 +88,24 @@
             this.dgvStock.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvStock.CausesValidation = false;
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStock.Location = new System.Drawing.Point(3, 132);
+            this.dgvStock.Location = new System.Drawing.Point(3, 163);
             this.dgvStock.Name = "dgvStock";
             this.dgvStock.RowHeadersWidth = 62;
             this.dgvStock.RowTemplate.Height = 28;
-            this.dgvStock.Size = new System.Drawing.Size(973, 458);
+            this.dgvStock.Size = new System.Drawing.Size(973, 425);
             this.dgvStock.TabIndex = 1;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnRefresh.BackColor = System.Drawing.Color.Black;
+            this.btnRefresh.BackgroundImage = global::ArtsentApp.Properties.Resources.refrezcar;
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefresh.Location = new System.Drawing.Point(885, 13);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(91, 82);
+            this.btnRefresh.TabIndex = 2;
+            this.btnRefresh.UseVisualStyleBackColor = false;
             // 
             // frmStock
             // 
@@ -117,6 +132,7 @@
         private System.Windows.Forms.TableLayoutPanel tblMain;
         private System.Windows.Forms.ComboBox cboProducto;
         private System.Windows.Forms.DataGridView dgvStock;
+        private Custom_Controls.RoundButton btnRefresh;
     }
 }
 
