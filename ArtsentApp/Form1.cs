@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ArtsentApp
@@ -18,58 +19,67 @@ namespace ArtsentApp
 
         }
 
-        private void btnImportar_Click(object sender, EventArgs e)
+        private async void btnImportar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string path = @"C:\Artsant\";
-                if (!Directory.Exists(path))
-                    Directory.CreateDirectory(path);
-                string now = DateTime.Now.ToString("dd_MM_yyyy HH_mm_ss");
-                string file = path + @"Stock_" + now + ".txt";
-                if (!File.Exists(file))
-                {
-                    using (StreamWriter sw = File.CreateText(file))
-                    {
-                        for (int i = 0; i < dgvStock.Rows.Count - 1; i++)
-                        {
-                            for (int j = 0; j < dgvStock.Columns.Count; j++)
-                            {
-                                sw.Write("\t" + dgvStock.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
-                            }
-                            sw.WriteLine("");
-                            sw.WriteLine("-----------------------------------------------------");
-                        }
-                        sw.Close();
-                        MessageBox.Show("Data Exported");
-
-                    }
-                }
-                else
-                {
-                    using (StreamWriter sw = File.CreateText(file))
-                    {
-                        for (int i = 0; i < dgvStock.Rows.Count - 1; i++)
-                        {
-                            for (int j = 0; j < dgvStock.Columns.Count; j++)
-                            {
-                                sw.Write("\t" + dgvStock.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
-                            }
-                            sw.WriteLine("");
-                            sw.WriteLine("-----------------------------------------------------");
-                        }
-                        sw.Close();
-                        MessageBox.Show("Data Exported");
-
-                    }
-                }                                     
-                
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            
+            var task = ImportFile();
+            await task;
         }
+
+        private async Task ImportFile()
+        {
+            await Task.Run(() =>
+            {
+                try
+                {
+                    string path = @"C:\Artsant\";
+                    if (!Directory.Exists(path))
+                        Directory.CreateDirectory(path);
+                    string now = DateTime.Now.ToString("dd_MM_yyyy HH_mm_ss");
+                    string file = path + @"Stock_" + now + ".txt";
+                    if (!File.Exists(file))
+                    {
+                        using (StreamWriter sw = File.CreateText(file))
+                        {
+                            for (int i = 0; i < dgvStock.Rows.Count - 1; i++)
+                            {
+                                for (int j = 0; j < dgvStock.Columns.Count; j++)
+                                {
+                                    sw.Write("\t" + dgvStock.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
+                                }
+                                sw.WriteLine("");
+                                sw.WriteLine("-----------------------------------------------------");
+                            }
+                            sw.Close();
+                            MessageBox.Show("Data Exported");
+
+                        }
+                    }
+                    else
+                    {
+                        using (StreamWriter sw = File.CreateText(file))
+                        {
+                            for (int i = 0; i < dgvStock.Rows.Count - 1; i++)
+                            {
+                                for (int j = 0; j < dgvStock.Columns.Count; j++)
+                                {
+                                    sw.Write("\t" + dgvStock.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
+                                }
+                                sw.WriteLine("");
+                                sw.WriteLine("-----------------------------------------------------");
+                            }
+                            sw.Close();
+                            MessageBox.Show("Data Exported");
+
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            });
+        }
+
     }
 }
