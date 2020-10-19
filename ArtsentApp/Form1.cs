@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArtsentApp.Repositorio;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -81,5 +82,13 @@ namespace ArtsentApp
             });
         }
 
+        private void frmStock_Load(object sender, EventArgs e)
+        {
+            cboProducto.DataSource = Consultas.GetProductos();
+            cboProducto.DisplayMember = "xxx";
+            cboProducto.ValueMember = "yyyy";
+
+            dgvStock.DataSource = Consultas.GetGrilla();
+        }
     }
 }

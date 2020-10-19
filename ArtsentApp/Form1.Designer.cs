@@ -61,7 +61,7 @@
             this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.783784F));
             this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.46622F));
             this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tblMain.Size = new System.Drawing.Size(979, 589);
+            this.tblMain.Size = new System.Drawing.Size(979, 587);
             this.tblMain.TabIndex = 0;
             this.tblMain.Tag = "Elija producto";
             // 
@@ -95,7 +95,7 @@
             this.dgvStock.Name = "dgvStock";
             this.dgvStock.RowHeadersWidth = 62;
             this.dgvStock.RowTemplate.Height = 28;
-            this.dgvStock.Size = new System.Drawing.Size(973, 381);
+            this.dgvStock.Size = new System.Drawing.Size(973, 380);
             this.dgvStock.TabIndex = 1;
             // 
             // btnRefresh
@@ -115,9 +115,9 @@
             this.btnImportar.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnImportar.BackgroundImage = global::ArtsentApp.Properties.Resources.importar;
             this.btnImportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImportar.Location = new System.Drawing.Point(3, 535);
+            this.btnImportar.Location = new System.Drawing.Point(3, 534);
             this.btnImportar.Name = "btnImportar";
-            this.btnImportar.Size = new System.Drawing.Size(49, 51);
+            this.btnImportar.Size = new System.Drawing.Size(49, 50);
             this.btnImportar.TabIndex = 3;
             this.btnImportar.UseVisualStyleBackColor = true;
             this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
@@ -135,6 +135,7 @@
             this.Name = "frmStock";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Stock Consolidado";
+            this.Load += new System.EventHandler(this.frmStock_Load);
             this.tblMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             this.ResumeLayout(false);
