@@ -20,7 +20,7 @@ namespace ArtsentApp.Repositorio
             {
                 conn.Open();
 
-                string query = "select lalalalal";
+                string query = "select lalalalal"; // aca la consulta
                 SqlCommand _comando = new SqlCommand(query, conn);
                 SqlDataReader _reader = _comando.ExecuteReader();
                 while (_reader.Read())

@@ -90,5 +90,21 @@ namespace ArtsentApp
 
             //dgvStock.DataSource = Consultas.GetGrilla();
         }
+
+        private void chkDescripcion_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkDescripcion.Checked == true)
+            {
+                //cboProducto.DataSource = Consultas.GetProductos();
+                //cboProducto.DisplayMember = "xxx";
+                //cboProducto.ValueMember = "yyyy";
+            }
+            else
+            {
+                //cboProducto.DataSource = Consultas.GetProductos();
+                //cboProducto.DisplayMember = "xxx";
+                //cboProducto.ValueMember = "yyyy";
+            }
+        }
     }
 }

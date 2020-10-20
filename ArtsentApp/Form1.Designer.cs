@@ -32,9 +32,9 @@
             this.tblMain = new System.Windows.Forms.TableLayoutPanel();
             this.cboProducto = new System.Windows.Forms.ComboBox();
             this.dgvStock = new System.Windows.Forms.DataGridView();
+            this.btnRefresh = new ArtsentApp.Custom_Controls.RoundButton();
             this.btnImportar = new System.Windows.Forms.Button();
             this.chkDescripcion = new System.Windows.Forms.CheckBox();
-            this.btnRefresh = new ArtsentApp.Custom_Controls.RoundButton();
             this.tblMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +64,7 @@
             this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.413002F));
             this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.00956F));
             this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tblMain.Size = new System.Drawing.Size(979, 579);
+            this.tblMain.Size = new System.Drawing.Size(979, 578);
             this.tblMain.TabIndex = 0;
             this.tblMain.Tag = "Elija producto";
             // 
@@ -78,7 +78,7 @@
             this.cboProducto.DropDownWidth = 100;
             this.cboProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboProducto.IntegralHeight = false;
-            this.cboProducto.Location = new System.Drawing.Point(189, 142);
+            this.cboProducto.Location = new System.Drawing.Point(189, 141);
             this.cboProducto.Name = "cboProducto";
             this.cboProducto.Size = new System.Drawing.Size(600, 38);
             this.cboProducto.TabIndex = 0;
@@ -94,19 +94,31 @@
             this.dgvStock.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvStock.CausesValidation = false;
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStock.Location = new System.Drawing.Point(3, 186);
+            this.dgvStock.Location = new System.Drawing.Point(3, 184);
             this.dgvStock.Name = "dgvStock";
             this.dgvStock.RowHeadersWidth = 62;
             this.dgvStock.RowTemplate.Height = 28;
-            this.dgvStock.Size = new System.Drawing.Size(973, 334);
+            this.dgvStock.Size = new System.Drawing.Size(973, 333);
             this.dgvStock.TabIndex = 1;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnRefresh.BackColor = System.Drawing.Color.Black;
+            this.btnRefresh.BackgroundImage = global::ArtsentApp.Properties.Resources.refrezcar;
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefresh.Location = new System.Drawing.Point(874, 13);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(102, 83);
+            this.btnRefresh.TabIndex = 2;
+            this.btnRefresh.UseVisualStyleBackColor = false;
             // 
             // btnImportar
             // 
             this.btnImportar.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnImportar.BackgroundImage = global::ArtsentApp.Properties.Resources.importar;
             this.btnImportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImportar.Location = new System.Drawing.Point(3, 526);
+            this.btnImportar.Location = new System.Drawing.Point(3, 524);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(49, 50);
             this.btnImportar.TabIndex = 3;
@@ -117,24 +129,13 @@
             // 
             this.chkDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkDescripcion.AutoSize = true;
-            this.chkDescripcion.Location = new System.Drawing.Point(399, 114);
+            this.chkDescripcion.Location = new System.Drawing.Point(399, 113);
             this.chkDescripcion.Name = "chkDescripcion";
             this.chkDescripcion.Size = new System.Drawing.Size(181, 22);
             this.chkDescripcion.TabIndex = 4;
             this.chkDescripcion.Text = "filtrar por descripcion";
             this.chkDescripcion.UseVisualStyleBackColor = true;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnRefresh.BackColor = System.Drawing.Color.Black;
-            this.btnRefresh.BackgroundImage = global::ArtsentApp.Properties.Resources.refrezcar;
-            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRefresh.Location = new System.Drawing.Point(874, 14);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(102, 83);
-            this.btnRefresh.TabIndex = 2;
-            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.chkDescripcion.CheckedChanged += new System.EventHandler(this.chkDescripcion_CheckedChanged);
             // 
             // frmStock
             // 
