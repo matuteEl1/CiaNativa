@@ -84,11 +84,11 @@ namespace ArtsentApp
 
         private void frmStock_Load(object sender, EventArgs e)
         {
-            cboProducto.DataSource = Consultas.GetProductos();
-            cboProducto.DisplayMember = "xxx";
-            cboProducto.ValueMember = "yyyy";
+            //cboProducto.DataSource = Consultas.GetProductos();
+            //cboProducto.DisplayMember = "xxx";
+            //cboProducto.ValueMember = "yyyy";
 
-            dgvStock.DataSource = Consultas.GetGrilla();
+            //dgvStock.DataSource = Consultas.GetGrilla();
         }
     }
 }
