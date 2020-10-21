@@ -126,9 +126,7 @@ namespace ArtsentApp
             dgvStock.DataSource = Consultas.GetGrilla(cboProducto.Text);
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            dgvStock.DataSource = Consultas.GetGrilla(cboProducto.Text);
+            dgvStock.DataSource = Consultas.GetGrilla();
         }
     }
 }

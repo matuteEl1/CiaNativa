@@ -54,17 +54,15 @@
             this.tblMain.Controls.Add(this.cboProducto, 0, 2);
             this.tblMain.Controls.Add(this.dgvStock, 0, 3);
             this.tblMain.Controls.Add(this.btnRefresh, 0, 0);
-            this.tblMain.Controls.Add(this.btnImportar, 0, 4);
-            this.tblMain.Controls.Add(this.chkDescripcion, 0, 1);
-            this.tblMain.Location = new System.Drawing.Point(2, 3);
+            this.tblMain.Controls.Add(this.btnImportar, 0, 3);
+            this.tblMain.Location = new System.Drawing.Point(4, 3);
             this.tblMain.Name = "tblMain";
-            this.tblMain.RowCount = 5;
-            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.44532F));
-            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.71785F));
-            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.62523F));
-            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.32838F));
+            this.tblMain.RowCount = 4;
+            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.58108F));
+            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.783784F));
+            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.46622F));
             this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tblMain.Size = new System.Drawing.Size(983, 596);
+            this.tblMain.Size = new System.Drawing.Size(979, 587);
             this.tblMain.TabIndex = 0;
             this.tblMain.Tag = "Elija producto";
             // 
@@ -80,7 +78,7 @@
             this.cboProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboProducto.IntegralHeight = false;
-            this.cboProducto.Location = new System.Drawing.Point(191, 138);
+            this.cboProducto.Location = new System.Drawing.Point(189, 104);
             this.cboProducto.Name = "cboProducto";
             this.cboProducto.Size = new System.Drawing.Size(600, 28);
             this.cboProducto.TabIndex = 0;
@@ -99,7 +97,7 @@
             this.dgvStock.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvStock.CausesValidation = false;
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStock.Location = new System.Drawing.Point(3, 233);
+            this.dgvStock.Location = new System.Drawing.Point(3, 148);
             this.dgvStock.Name = "dgvStock";
             this.dgvStock.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -113,7 +111,7 @@
             this.dgvStock.RowHeadersVisible = false;
             this.dgvStock.RowHeadersWidth = 62;
             this.dgvStock.RowTemplate.Height = 28;
-            this.dgvStock.Size = new System.Drawing.Size(977, 303);
+            this.dgvStock.Size = new System.Drawing.Size(973, 380);
             this.dgvStock.TabIndex = 1;
             // 
             // btnImportar
@@ -148,12 +146,35 @@
             this.btnRefresh.BackColor = System.Drawing.Color.Black;
             this.btnRefresh.BackgroundImage = global::ArtsentApp.Properties.Resources.refrezcar;
             this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRefresh.Location = new System.Drawing.Point(889, 8);
+            this.btnRefresh.Location = new System.Drawing.Point(885, 8);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(91, 82);
+            this.btnRefresh.Size = new System.Drawing.Size(102, 83);
             this.btnRefresh.TabIndex = 2;
             this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnImportar
+            // 
+            this.btnImportar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnImportar.BackgroundImage = global::ArtsentApp.Properties.Resources.importar;
+            this.btnImportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImportar.Location = new System.Drawing.Point(3, 534);
+            this.btnImportar.Name = "btnImportar";
+            this.btnImportar.Size = new System.Drawing.Size(49, 50);
+            this.btnImportar.TabIndex = 3;
+            this.btnImportar.UseVisualStyleBackColor = true;
+            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
+            // 
+            // chkDescripcion
+            // 
+            this.chkDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chkDescripcion.AutoSize = true;
+            this.chkDescripcion.Location = new System.Drawing.Point(399, 113);
+            this.chkDescripcion.Name = "chkDescripcion";
+            this.chkDescripcion.Size = new System.Drawing.Size(181, 22);
+            this.chkDescripcion.TabIndex = 4;
+            this.chkDescripcion.Text = "filtrar por descripcion";
+            this.chkDescripcion.UseVisualStyleBackColor = true;
+            this.chkDescripcion.CheckedChanged += new System.EventHandler(this.chkDescripcion_CheckedChanged);
             // 
             // frmStock
             // 
