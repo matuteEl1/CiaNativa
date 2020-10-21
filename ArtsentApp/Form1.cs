@@ -8,16 +8,18 @@ namespace ArtsentApp
 {
     public partial class frmStock : Form
     {
+        private bool firtLaunch = true;
         public frmStock()
         {
             InitializeComponent();
-            this.DoubleBuffered = true;
-            dgvStock.VirtualMode = true;
-        }
-
-        private void cboProducto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btnImportar, "Importar");
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btnRefresh, "Refrezcar");
+            cboProducto.DataSource = Consultas.GetProductos();
+            cboProducto.DisplayMember = "Codigo";
+            cboProducto.ValueMember = "Descripcion";
+            cboProducto.SelectedIndex = -1;
         }
 
         private async void btnImportar_Click(object sender, EventArgs e)
@@ -41,7 +43,7 @@ namespace ArtsentApp
                     {
                         using (StreamWriter sw = File.CreateText(file))
                         {
-                            for (int i = 0; i < dgvStock.Rows.Count - 1; i++)
+                            for (int i = 0; i < dgvStock.Rows.Count; i++)
                             {
                                 for (int j = 0; j < dgvStock.Columns.Count; j++)
                                 {
@@ -59,7 +61,7 @@ namespace ArtsentApp
                     {
                         using (StreamWriter sw = File.CreateText(file))
                         {
-                            for (int i = 0; i < dgvStock.Rows.Count - 1; i++)
+                            for (int i = 0; i < dgvStock.Rows.Count; i++)
                             {
                                 for (int j = 0; j < dgvStock.Columns.Count; j++)
                                 {
@@ -84,11 +86,49 @@ namespace ArtsentApp
 
         private void frmStock_Load(object sender, EventArgs e)
         {
-            cboProducto.DataSource = Consultas.GetProductos();
-            cboProducto.DisplayMember = "xxx";
-            cboProducto.ValueMember = "yyyy";
+                        
+        }
 
-            dgvStock.DataSource = Consultas.GetGrilla();
+        private void chkDescripcion_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkDescripcion.Checked)
+            {
+                cboProducto.DisplayMember = "Descripcion";
+                cboProducto.ValueMember = "Codigo";
+            }
+            else
+            {
+                cboProducto.DisplayMember = "Codigo";
+                cboProducto.ValueMember = "Descripcion";
+            }
+        }
+
+        private void cboProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(firtLaunch)
+            {
+                firtLaunch = false;
+                return;
+            }
+            if (cboProducto.Text == "")
+                return;
+            else
+                dgvStock.DataSource = Consultas.GetGrilla(cboProducto.Text);
+        }
+
+        private void cboProducto_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (firtLaunch)
+            {
+                firtLaunch = false;
+                return;
+            }
+            dgvStock.DataSource = Consultas.GetGrilla(cboProducto.Text);
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dgvStock.DataSource = Consultas.GetGrilla(cboProducto.Text);
         }
     }
 }
