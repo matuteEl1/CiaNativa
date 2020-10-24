@@ -21,5 +21,15 @@ namespace ArtsentApp.Objetos
         /// Descripcion del producto
         /// </summary>
         public string Descripcion { get; set; }
+
+        /// <summary>
+        /// Codigo del producto
+        /// </summary>
+        public string CodigoDescripcion { get; set; }
+
+        /// <summary>
+        /// Descripcion del producto
+        /// </summary>
+        public string DescripcionCodigo { get; set; }
     }
 }

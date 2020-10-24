@@ -8,7 +8,6 @@ namespace ArtsentApp
 {
     public partial class frmStock : Form
     {
-        private bool firtLaunch = true;
         public frmStock()
         {
             InitializeComponent();
@@ -17,8 +16,8 @@ namespace ArtsentApp
             System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
             ToolTip1.SetToolTip(this.btnRefresh, "Refrezcar");
             cboProducto.DataSource = Consultas.GetProductos();
-            cboProducto.DisplayMember = "Codigo";
-            cboProducto.ValueMember = "Descripcion";
+            cboProducto.DisplayMember = "CodigoDescripcion";
+            cboProducto.ValueMember = "Codigo";
             cboProducto.SelectedIndex = -1;
         }
 
@@ -86,47 +85,68 @@ namespace ArtsentApp
 
         private void frmStock_Load(object sender, EventArgs e)
         {
-                        
+
         }
 
-        private void chkDescripcion_CheckedChanged(object sender, EventArgs e)
-        {
-            if(chkDescripcion.Checked)
-            {
-                cboProducto.DisplayMember = "Descripcion";
-                cboProducto.ValueMember = "Codigo";
-            }
-            else
-            {
-                cboProducto.DisplayMember = "Codigo";
-                cboProducto.ValueMember = "Descripcion";
-            }
-        }
-
-        private void cboProducto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(firtLaunch)
-            {
-                firtLaunch = false;
-                return;
-            }
-            if (cboProducto.Text == "")
-                return;
-            else
-                dgvStock.DataSource = Consultas.GetGrilla(cboProducto.Text);
-        }
 
         private void cboProducto_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (firtLaunch)
+            CargarGrilla(cboProducto.SelectedValue.ToString());
+            lblCodDesc.Text = cboProducto.SelectedValue.ToString();
+        }
+        private void chkDesc_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkDesc.Checked)
             {
-                firtLaunch = false;
-                return;
+                cboProducto.DisplayMember = "DescripcionCodigo";
+                cboProducto.ValueMember = "Descripcion";
+                if(cboProducto.Text != "")
+                {
+                    lblCodDesc.Text = cboProducto.SelectedValue.ToString();
+                }
+                
             }
-            dgvStock.DataSource = Consultas.GetGrilla(cboProducto.Text);
+            else
+            {
+                cboProducto.DisplayMember = "CodigoDescripcion";
+                cboProducto.ValueMember = "Codigo";
+                if (cboProducto.Text != "")
+                {
+                    lblCodDesc.Text = cboProducto.SelectedValue.ToString();
+                }
+            }
         }
 
-            dgvStock.DataSource = Consultas.GetGrilla();
+        private void CargarGrilla(string codigo)
+        {
+            dgvStock.DataSource = Consultas.GetGrilla(codigo);
+            lblDisponible.Text = " Total Disponible: " + Disponibilidad().ToString();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dgvStock.DataSource = Consultas.GetGrilla(cboProducto.SelectedValue.ToString());
+            lblDisponible.Text = " Total Disponible: " + Disponibilidad().ToString();
+        }
+
+        private void cboProducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                dgvStock.DataSource = Consultas.GetGrilla(cboProducto.SelectedValue.ToString());
+                lblDisponible.Text = " Total Disponible: " + Disponibilidad().ToString();
+            }
+        }
+
+        private decimal Disponibilidad()
+        {
+            decimal suma = 0;
+            foreach (DataGridViewRow row in dgvStock.Rows)
+            {
+                if (row.Cells["STOCK"].Value != null)
+                    suma += (decimal)row.Cells["STOCK"].Value;
+            }
+            return suma;
         }
     }
 }
