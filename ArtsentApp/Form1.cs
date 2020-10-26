@@ -125,6 +125,11 @@ namespace ArtsentApp
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            if (cboProducto.Text == "")
+            {
+                MessageBox.Show("No podes refrezcar si no tenes un producto seleccionado!");
+                return;
+            }
             dgvStock.DataSource = Consultas.GetGrilla(cboProducto.SelectedValue.ToString());
             lblDisponible.Text = " Total Disponible: " + Disponibilidad().ToString();
         }
