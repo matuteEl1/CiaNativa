@@ -25,7 +25,7 @@ namespace ArtsentApp.Repositorio
 
                 string query = "SELECT DISTINCT STA11.ID_STA11 AS ID , STA11.Cod_Articu AS [Codigo], Sta11.Descripcio + ' ' + Sta11.DESC_ADIC AS [Descripcion] , " +
                                 " STA11.Cod_Articu COLLATE Latin1_General_BIN + ' ' + Sta11.Descripcio + ' ' + Sta11.DESC_ADIC AS[CodigoDescripcion], " +
-                                " Sta11.Descripcio + ' ' + Sta11.DESC_ADIC + ' ' + STA11.Cod_Articu COLLATE Latin1_General_BIN AS[DescripcionCodigo] " +
+                                " Sta11.Descripcio + ' ' + Sta11.DESC_ADIC + ' ' + ' - ' + ' ' + STA11.Cod_Articu COLLATE Latin1_General_BIN AS[DescripcionCodigo] " +
                                 " FROM STA11 " +
                                 " INNER JOIN STA19 ON STA11.COD_ARTICU = STA19.COD_ARTICU " +
                                 " INNER JOIN STA22 ON STA19.COD_DEPOSI = STA22.COD_SUCURS";
