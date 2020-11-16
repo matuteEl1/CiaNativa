@@ -37,10 +37,10 @@
             this.lblDisponible = new System.Windows.Forms.Label();
             this.cboProducto = new System.Windows.Forms.ComboBox();
             this.lblCodDesc = new System.Windows.Forms.Label();
-            this.chkDescripcion = new System.Windows.Forms.CheckBox();
             this.tblEncabezado = new System.Windows.Forms.TableLayoutPanel();
-            this.picImagenArtsent = new System.Windows.Forms.PictureBox();
             this.btnRefresh = new ArtsentApp.Custom_Controls.RoundButton();
+            this.picImagenArtsent = new System.Windows.Forms.PictureBox();
+            this.chkDescripcion = new System.Windows.Forms.CheckBox();
             this.tblMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             this.tblEncabezado.SuspendLayout();
@@ -156,7 +156,7 @@
             this.cboProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboProducto.IntegralHeight = false;
-            this.cboProducto.Location = new System.Drawing.Point(194, 130);
+            this.cboProducto.Location = new System.Drawing.Point(194, 129);
             this.cboProducto.Name = "cboProducto";
             this.cboProducto.Size = new System.Drawing.Size(600, 28);
             this.cboProducto.TabIndex = 0;
@@ -174,20 +174,6 @@
             this.lblCodDesc.TabIndex = 6;
             this.lblCodDesc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // chkDescripcion
-            // 
-            this.chkDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.chkDescripcion.AutoSize = true;
-            this.chkDescripcion.FlatAppearance.BorderSize = 2;
-            this.chkDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDescripcion.Location = new System.Drawing.Point(399, 113);
-            this.chkDescripcion.Margin = new System.Windows.Forms.Padding(5);
-            this.chkDescripcion.Name = "chkDescripcion";
-            this.chkDescripcion.Size = new System.Drawing.Size(181, 22);
-            this.chkDescripcion.TabIndex = 4;
-            this.chkDescripcion.Text = "filtrar por descripcion";
-            this.chkDescripcion.UseVisualStyleBackColor = true;
-            // 
             // tblEncabezado
             // 
             this.tblEncabezado.ColumnCount = 3;
@@ -204,19 +190,6 @@
             this.tblEncabezado.Size = new System.Drawing.Size(982, 78);
             this.tblEncabezado.TabIndex = 7;
             // 
-            // picImagenArtsent
-            // 
-            this.picImagenArtsent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picImagenArtsent.BackgroundImage = global::ArtsentApp.Properties.Resources.NativaDesc;
-            this.picImagenArtsent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picImagenArtsent.Location = new System.Drawing.Point(101, 3);
-            this.picImagenArtsent.Name = "picImagenArtsent";
-            this.picImagenArtsent.Size = new System.Drawing.Size(779, 72);
-            this.picImagenArtsent.TabIndex = 4;
-            this.picImagenArtsent.TabStop = false;
-            // 
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -231,6 +204,33 @@
             this.btnRefresh.TabIndex = 3;
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // picImagenArtsent
+            // 
+            this.picImagenArtsent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picImagenArtsent.BackgroundImage = global::ArtsentApp.Properties.Resources.NativaDesc;
+            this.picImagenArtsent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picImagenArtsent.Location = new System.Drawing.Point(101, 3);
+            this.picImagenArtsent.Name = "picImagenArtsent";
+            this.picImagenArtsent.Size = new System.Drawing.Size(779, 72);
+            this.picImagenArtsent.TabIndex = 4;
+            this.picImagenArtsent.TabStop = false;
+            // 
+            // chkDescripcion
+            // 
+            this.chkDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chkDescripcion.AutoSize = true;
+            this.chkDescripcion.FlatAppearance.BorderSize = 2;
+            this.chkDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkDescripcion.Location = new System.Drawing.Point(399, 113);
+            this.chkDescripcion.Margin = new System.Windows.Forms.Padding(5);
+            this.chkDescripcion.Name = "chkDescripcion";
+            this.chkDescripcion.Size = new System.Drawing.Size(181, 22);
+            this.chkDescripcion.TabIndex = 4;
+            this.chkDescripcion.Text = "filtrar por descripcion";
+            this.chkDescripcion.UseVisualStyleBackColor = true;
             // 
             // frmStock
             // 

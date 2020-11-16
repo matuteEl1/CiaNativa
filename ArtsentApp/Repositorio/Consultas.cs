@@ -1,11 +1,7 @@
 ﻿using ArtsentApp.Objetos;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ArtsentApp.Repositorio
 {
@@ -96,6 +92,7 @@ namespace ArtsentApp.Repositorio
                                     " SELECT ART.CODIGO, ART.DESCRIPCION, ART.COD_DEPOSITO, ART.DEPOSITO,  " +
                                     " ISNULL((CASE WHEN ART.COD_DEPOSITO = 5 AND COP.COD_DEPOSITO = 5 AND SUM(ART.STOCK) < 0 THEN SUM(ART.STOCK) + SUM(COP.STOCK) " +
                                     " WHEN ART.COD_DEPOSITO = 5 AND COP.COD_DEPOSITO = 5 AND SUM(COP.STOCK) < 0 THEN SUM(COP.STOCK) + SUM(ART.STOCK) " +
+                                    " WHEN COUNT(COP.STOCK)=0 THEN SUM(ART.STOCK) " +
                                     " WHEN ART.COD_DEPOSITO = 6 THEN SUM(ART.STOCK) END),'0.00') AS STOCK, PRE.PRECIO " +
                                     " FROM @TT_ARTSSENT ART " +
                                     " LEFT JOIN @TT_COPIA COP ON ART.CODIGO = COP.CODIGO AND ART.COD_DEPOSITO = COP.COD_DEPOSITO " +
