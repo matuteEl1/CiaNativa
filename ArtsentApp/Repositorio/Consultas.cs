@@ -93,6 +93,7 @@ namespace ArtsentApp.Repositorio
                                     " ISNULL((CASE WHEN ART.COD_DEPOSITO = 5 AND COP.COD_DEPOSITO = 5 AND SUM(ART.STOCK) < 0 THEN SUM(ART.STOCK) + SUM(COP.STOCK) " +
                                     " WHEN ART.COD_DEPOSITO = 5 AND COP.COD_DEPOSITO = 5 AND SUM(COP.STOCK) < 0 THEN SUM(COP.STOCK) + SUM(ART.STOCK) " +
                                     " WHEN COUNT(COP.STOCK)=0 THEN SUM(ART.STOCK) " +
+                                    " WHEN ART.COD_DEPOSITO = 5 AND COP.COD_DEPOSITO = 5 AND SUM(COP.STOCK) = 0 THEN SUM(ART.STOCK)  " +
                                     " WHEN ART.COD_DEPOSITO = 6 THEN SUM(ART.STOCK) END),'0.00') AS STOCK, PRE.PRECIO " +
                                     " FROM @TT_ARTSSENT ART " +
                                     " LEFT JOIN @TT_COPIA COP ON ART.CODIGO = COP.CODIGO AND ART.COD_DEPOSITO = COP.COD_DEPOSITO " +
